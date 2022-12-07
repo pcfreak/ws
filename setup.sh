@@ -17,16 +17,6 @@ MYIP=$(curl -sS ipv4.icanhazip.com)
 echo -e "\e[32mloading...\e[0m"
 clear
 # Version sc
-VERSIONSC () {
-    VCODE=V1
-    IZINVERSION=$(curl https://raw.githubusercontent.com/${GitUser}/allow/main/ipvps.conf | grep $MYIP | awk '{print $6}')
-    if [ $VCODE = $IZINVERSION ]; then
-    echo -e "\e[32mReady for script installation version 1 (websocket)..\e[0m"
-    else
-    echo -e "\e[31mYou do not have permission to install script version 1 (websocket)!\e[0m"
-    exit 0
-fi
-}
 # Valid Script
 VALIDITY () {
     today=`date -d "0 days" +"%Y-%m-%d"`
