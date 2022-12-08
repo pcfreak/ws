@@ -114,6 +114,9 @@ systemctl restart wg-quick@wg0
 ## Telegram
 
 [DON_VPN](https://t.me/donboyage)
+** CREDIT
+** PAKYA https://t.me/anakjati567
+** DON BOYAGE https://t.me/donboyage
 
 
 
