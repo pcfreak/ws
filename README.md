@@ -52,9 +52,9 @@ systemctl restart wg-quick@wg0
 
 ## Info :
 
- ## Script for Sell Only. Contact owner on Telegram @NORULEZZx <a href="https://t.me/NORULEZZx" target=”_blank”><img src="https://img.shields.io/static/v1?style=for-the-badge&logo=Telegram&label=Telegram&message=Click%20Here&color=blue"></a>
+ ## Script for Sell Only. Contact owner on Telegram @donboyage <a href="https://t.me/donboyage" target=”_blank”><img src="https://img.shields.io/static/v1?style=for-the-badge&logo=Telegram&label=Telegram&message=Click%20Here&color=blue"></a>
 
- ## For Buy Script : Contact Telegram @NORULEZZx <a href="https://t.me/Virtual_NW" target=”_blank”><img src="https://img.shields.io/static/v1?style=for-the-badge&logo=Telegram&label=Telegram&message=Click%20Here&color=blue"></a>
+ ## For Buy Script : Contact Telegram @donboyage <a href="https://t.me/donboyage" target=”_blank”><img src="https://img.shields.io/static/v1?style=for-the-badge&logo=Telegram&label=Telegram&message=Click%20Here&color=blue"></a>
 
  ## Main Menu
 
@@ -120,17 +120,7 @@ systemctl restart wg-quick@wg0
 
 [DON_VPN](https://t.me/donboyage)
 
-[Group DIY-VPN](https://t.me/DIYNETWORKK)
 
-[Channel DIY-VPN](https://t.me/DIYVPNCHANNEL)
-
-## Credit :
-
-*   DIYVPN
-
-*   Project D
-
-*   V2ray
 
 <p align="center">
   <a><img src="https://img.shields.io/badge/Copyright%20©-Diyvpn%20AutoScriptVPN%202022.%20All%20rights%20reserved...-blueviolet.svg" style="max-width:200%;">
