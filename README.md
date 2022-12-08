@@ -1,4 +1,4 @@
-# Script DIYVPN (V1-Websocket)
+# Script DONVPN (V1-Websocket)
  Welcome Dear😊
 
  <h2 align="center">AutoScript VPN By DON VPN <img src="https://img.shields.io/badge/Version-1.0-blue.svg"></h2>
