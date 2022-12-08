@@ -1,7 +1,29 @@
 #!/bin/bash
 #wget https://github.com/${GitUser}/
 GitUser="akuhaa021"
-
+#IZIN SCRIPT
+MYIP=$(curl -sS ipv4.icanhazip.com)
+# Valid Script
+VALIDITY () {
+    today=`date -d "0 days" +"%Y-%m-%d"`
+    Exp1=$(curl https://raw.githubusercontent.com/${GitUser}/allow/main/ipvps.conf | grep $MYIP | awk '{print $4}')
+    if [[ $today < $Exp1 ]]; then
+    echo -e "\e[32mYOUR SCRIPT ACTIVE..\e[0m"
+    else
+    echo -e "\e[31mYOUR SCRIPT HAS EXPIRED!\e[0m";
+    echo -e "\e[31mPlease renew your ipvps first\e[0m"
+    exit 0
+fi
+}
+IZIN=$(curl https://raw.githubusercontent.com/${GitUser}/allow/main/ipvps.conf | awk '{print $5}' | grep $MYIP)
+if [ $MYIP = $IZIN ]; then
+echo -e "\e[32mPermission Accepted...\e[0m"
+VALIDITY
+else
+echo -e "\e[31mPermission Denied!\e[0m";
+echo -e "\e[31mPlease buy script first\e[0m"
+exit 0
+fi
 echo -e "\e[32mloading...\e[0m"
 clear
 domain=$(cat /usr/local/etc/xray/domain)
@@ -32,9 +54,7 @@ chmod +x /usr/local/bin/trojan-go
 mkdir /var/log/trojan-go/
 touch /var/log/trojan-go/trojan-go.log
 
-echo -ne "Custom UUID [press enter for random] : "
-read uuid
-[[ -z $uuid ]] && uuid=$(cat /proc/sys/kernel/random/uuid)
+uuid=$(cat /proc/sys/kernel/random/uuid)
 # Buat Config Trojan Go
 cat > /etc/trojan-go/config.json << END
 {
