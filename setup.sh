@@ -19,7 +19,7 @@ clear
 # Version sc
 VERSIONSC () {
     VCODE=V1
-    IZINVERSION=$(curl https://raw.githubusercontent.com/${GitUser}/allow/main/ipvps.conf | grep $MYIP | awk '{print $6}')
+    IZINVERSION=V1
     if [ $VCODE = $IZINVERSION ]; then
     echo -e "\e[32mReady for script installation version 1 (websocket)..\e[0m"
     else
