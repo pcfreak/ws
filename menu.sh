@@ -1,6 +1,10 @@
 #!/bin/bash
 #wget https://github.com/${GitUser}/
 GitUser="akuhaa021"
+#IZIN SCRIPT
+MYIP=$(curl -sS ipv4.icanhazip.com)
+echo -e "\e[32mloading...\e[0m"
+clear
 if [[ "$IP" = "" ]]; then
 domain=$(cat /usr/local/etc/xray/domain)
 else
