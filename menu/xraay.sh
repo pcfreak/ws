@@ -802,16 +802,17 @@ until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
 			exit 1
 		fi
 	done
-patchtls=/xray-vlessws-tls
-patchnontls=/xray-vlessws-none-tls
+
 echo -ne "   Custom UUID [press enter for random] : "
 read uuid
 [[ -z $uuid ]] && uuid=$(cat /proc/sys/kernel/random/uuid)
 read -p "   Bug Address (Example: www.google.com) : " address
 read -p "   Bug SNI/Host (Example : m.facebook.com) : " sni
 read -p "   Expired (days) : " masaaktif
-bug_addr=${address}.
-bug_addr2=$address
+patchtls=CF-RAY%3Ahttp%3A//${sni}/xray-vlessws-tls
+patchnontls=/xray-vlessws-none-tls
+bug_addr=${address}
+bug_addr2=${MYIP}
 if [[ $address == "" ]]; then
 sts=$bug_addr2
 else
@@ -823,8 +824,8 @@ sed -i '/#xray-vless-tls$/a\#vls '"$user $exp $harini $uuid"'\
 },{"id": "'""$uuid""'","email": "'""$user""'"' /usr/local/etc/xray/config.json
 sed -i '/#xray-vless-nontls$/a\#vls '"$user $exp $harini $uuid"'\
 },{"id": "'""$uuid""'","email": "'""$user""'"' /usr/local/etc/xray/none.json
-vlesslink1="vless://${uuid}@${MYIP}:$tls?path=$patchtls&security=tls&encryption=none&type=ws&sni=$sni&host=$sni#vless_xray_${user}"
-vlesslink2="vless://${uuid}@${MYIP}:$none?path=$patchnontls&encryption=none&host=$sni&type=ws#vless_xray_${user}"
+vlesslink1="vless://${uuid}@${sts}:$tls?path=$patchtls&security=tls&encryption=none&type=ws&sni=$sni&host=${domain}#vless_xray_${user}"
+vlesslink2="vless://${uuid}@${sts}:$none?path=$patchnontls&encryption=none&host=$sni&type=ws#vless_xray_${user}"
 systemctl restart xray
 systemctl restart xray@none
 clear
@@ -832,7 +833,7 @@ clear
 echo -e "━━━━━━━━━━━━━━━━━━"
 echo -e "XRay Vless Account Information"
 echo -e "━━━━━━━━━━━━━━━━━━"
-echo -e "Server : XLN3"
+echo -e "Server : XLN1"
 echo -e "Server IP: $MYIP"
 echo -e "Username: ${user}"
 echo -e "Vless ID: ${uuid}"
@@ -843,6 +844,8 @@ echo -e "━━━━━━━━━━━━━━━━━━"
 echo -e "CLICK TO COPY"
 echo -e "━━━━━━━━━━━━━━━━━━"
 echo -e "${vlesslink2}"
+echo -e "━━━━━━━━━━━━━━━━━━"
+echo -e "${vlesslink1}"
 echo ""
 
 }
@@ -1001,7 +1004,7 @@ echo ""
 echo " =========================="
 echo " XRay Vless Account Information"
 echo " =========================="
-echo " Server: XLN3"
+echo " Server: XLN1"
 echo " Server IP: $MYIP"
 echo " Username: $user"
 echo " VLess ID: $uuid"
@@ -1164,7 +1167,7 @@ clear
 echo -e "━━━━━━━━━━━━━━━━━━"
 echo -e "XRay Vless Account Information"
 echo -e "━━━━━━━━━━━━━━━━━━"
-echo -e "Server : XLN3"
+echo -e "Server : XLN1"
 echo -e "Server IP: $MYIP"
 echo -e "Username: ${user}"
 echo -e "Vless ID: ${uuid}"
@@ -1323,7 +1326,7 @@ echo ""
 echo " =========================="
 echo " XRay Vless Account Information"
 echo " =========================="
-echo " Server: XLN3"
+echo " Server: XLN1"
 echo " Server IP: $MYIP"
 echo " Username: $user"
 echo " VLess ID: $uuid"
