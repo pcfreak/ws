@@ -4,16 +4,8 @@ GitUser="akuhaa021"
 #IZIN SCRIPT
 MYIP=$(curl -sS ipv4.icanhazip.com)
 
-if [[ $MYIP = "172.104.35.51" ]]; then
-	svname="XLN1"
-elif [[ $MYIP = "172.104.177.94" ]]; then
-	svname="XLN2"
-elif [[ $MYIP = "172.104.177.180" ]]; then
-	svname="XLN3"
-else
-	svname=""
-fi
-	
+svname=$(curl https://raw.githubusercontent.com/${GitUser}/allow/main/ipvps.conf | grep $MYIP | awk '{print $3}')
+
 echo -e "\e[32mloading...\e[0m"
 clear
 # Valid Script
