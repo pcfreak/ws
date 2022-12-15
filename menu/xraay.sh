@@ -1506,28 +1506,33 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^#vxtls " "/usr/local/etc/xray/config.json")
 	done
 
 echo -e "   Please Choose Telco : "
-echo -e "   1. Digi"
+echo -e "   1. Digi Pokemon Go"
 echo -e "   2. Umobile"
-echo -e "   3. Maxis : "
+echo -e "   3. MaxisTV : "
 echo -e "   4. Celcom : "
 echo -e "   5. Yes4G : "
 read -p "   Your Choise is : " telco
 
 if [[ $telco = "1" ]]; then
-	address="162.159.133.61"
-	sni=$domain
+	address="www.pokemon.com.${domain}"
+	sni="www.pokemon.com"
+	telko="DigiGo"
 elif [[ $telco = "2" ]]; then
 	address=$MYIP
 	sni="pay-dcb.u.com.my"
+	telko="Umobile"
 elif [[ $telco = "3" ]]; then
-	address="www.speedtest.net"
+	address="sub.viu.com"
 	sni=$address
+	telko="MaxisTV"
 elif [[ $telco = "4" ]]; then
-	address="www.speedtest.net"
+	address="onlinepayment.celcom.com.my"
 	sni=$address
+	telko="Celcom"
 elif [[ $telco = "5" ]]; then
 	address="cdn.who.int"
 	sni="who.int"
+	telko="Yes"
 else
 echo -e "   Invalid Choice. no bug added. add manual."
 fi
@@ -1536,40 +1541,24 @@ user=$(grep -E "^#vxtls " "/usr/local/etc/xray/config.json" | cut -d ' ' -f 2 | 
 harini=$(grep -E "^#vxtls " "/usr/local/etc/xray/config.json" | cut -d ' ' -f 4 | sed -n "${CLIENT_NUMBER}"p)
 exp=$(grep -E "^#vxtls " "/usr/local/etc/xray/config.json" | cut -d ' ' -f 3 | sed -n "${CLIENT_NUMBER}"p)
 uuid=$(grep -E "^#vxtls " "/usr/local/etc/xray/config.json" | cut -d ' ' -f 5 | sed -n "${CLIENT_NUMBER}"p)
-vlesslink1="vless://${uuid}@${address}:$xtls?security=xtls&encryption=none&headerType=none&type=tcp&flow=xtls-rprx-direct&sni=${sni}#vless_XTLS_${user}"
-vlesslink2="vless://${uuid}@${address}:$xtls?security=xtls&encryption=none&headerType=none&type=tcp&flow=xtls-rprx-splice&sni=${sni}#vless_XTLS_${user}"
+vlesslink1="vless://${uuid}@${address}:$xtls?security=xtls&encryption=none&headerType=none&type=tcp&flow=xtls-rprx-direct&sni=$sni#vless_XTLS_${telko}_${user}"
+vlesslink2="vless://${uuid}@${address}:$xtls?security=xtls&encryption=none&headerType=none&type=tcp&flow=xtls-rprx-splice&sni=$sni#vless_XTLS_${telko}_${user}"
 clear
-echo -e ""
-echo -e "\e[$line════════[XRAY VLESS XTLS]════════\e[m"
-echo -e "Remarks          : ${user}"
-echo -e "Domain           : ${domain}"
-echo -e "Ip/Host          : ${MYIP}"
-echo -e "Port Xtls        : $xtls"
-echo -e "User ID          : ${uuid}"
-echo -e "Encryption       : None"
-echo -e "Network          : TCP"
-echo -e "Flow             : Direct & Splice"
-echo -e "AllowInsecure    : True"
-echo -e "\e[$line═════════════════════════════════\e[m"
-echo -e "Pantang Larang $creditt Shop"
-echo -e "‼️Aktiviti Berikut Adalah Dilarang(ID akan di ban tanpa notis & tiada refund)"
-echo -e "\e[31m❌ Torrent (p2p, streaming p2p)"
-echo -e "\e[31m❌ PS4"
-echo -e "\e[31m❌ Porn"
-echo -e "\e[31m❌ Spam Bug"
-echo -e "\e[31m❌ Ddos Server"
-echo -e "\e[31m❌ Mining Bitcoins"
-echo -e "\e[31m❌ Abuse Usage"
-echo -e "\e[31m❌ Multi-Login ID"
-echo -e "\e[31m❌ Sharing Premium Config\e[m"
-echo -e "\e[$line═════════════════════════════════\e[m"
-echo -e "Link Xtls Direct : ${vlesslink1}"
-echo -e "\e[$line═════════════════════════════════\e[m"
-echo -e "Link Xtls Splice : ${vlesslink2}"
-echo -e "\e[$line═════════════════════════════════\e[m"
-echo -e "Created    : $harini"
-echo -e "Expired    : $exp"
-echo -e "Script By $creditt"
+echo -e "━━━━━━━━━━━━━━━━━━"
+echo -e "XRay Vless Account Information"
+echo -e "━━━━━━━━━━━━━━━━━━"
+echo -e "Server : ${svname}-XTLS"
+echo -e "Server IP: $MYIP"
+echo -e "Telco : ${telko}"
+echo -e "Username: ${user}"
+echo -e "Vless ID: ${uuid}"
+echo -e "Expiration date: $exp"
+echo ""
+echo -e "━━━━━━━━━━━━━━━━━━"
+echo -e "CLICK TO COPY"
+echo -e "━━━━━━━━━━━━━━━━━━"
+echo -e "${vlesslink2}"
+echo ""
 }
 # CEK USER LOGIN VLESS XTLS
 function menu18 () {
