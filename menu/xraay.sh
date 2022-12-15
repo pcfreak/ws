@@ -1254,7 +1254,7 @@ read uuid
 echo -e "   Please Choose Telco : "
 echo -e "   1. Digi Pokemon Go"
 echo -e "   2. Umobile"
-echo -e "   3. Maxis : "
+echo -e "   3. MaxisTV : "
 echo -e "   4. Celcom : "
 echo -e "   5. Yes4G : "
 read -p "   Your Choise is : " telco
@@ -1262,18 +1262,23 @@ read -p "   Your Choise is : " telco
 if [[ $telco = "1" ]]; then
 	address="www.pokemon.com.${domain}"
 	sni="www.pokemon.com"
+	telko="DigiGo"
 elif [[ $telco = "2" ]]; then
 	address=$MYIP
 	sni="pay-dcb.u.com.my"
+	telko="Umobile"
 elif [[ $telco = "3" ]]; then
-	address="www.speedtest.net"
+	address="sub.viu.com"
 	sni=$address
+	telko="MaxisTV"
 elif [[ $telco = "4" ]]; then
 	address="onlinepayment.celcom.com.my"
 	sni=$address
+	telko="Celcom"
 elif [[ $telco = "5" ]]; then
 	address="cdn.who.int"
 	sni="who.int"
+	telko="Yes"
 else
 echo -e "   Invalid Choice. no bug added. add manual."
 fi
@@ -1286,8 +1291,8 @@ exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 harini=`date -d "0 days" +"%Y-%m-%d"`
 sed -i '/#xray-vless-xtls$/a\#vxtls '"$user $exp $harini $uuid"'\
 },{"id": "'""$uuid""'","flow": "'""xtls-rprx-direct""'","level": '"0"',"email": "'""$user""'"' /usr/local/etc/xray/config.json
-vlesslink1="vless://${uuid}@${address}:$xtls?security=xtls&encryption=none&headerType=none&type=tcp&flow=xtls-rprx-direct&sni=$sni#vless_XTLS_${user}"
-vlesslink2="vless://${uuid}@${address}:$xtls?security=xtls&encryption=none&headerType=none&type=tcp&flow=xtls-rprx-splice&sni=$sni#vless_XTLS_${user}"
+vlesslink1="vless://${uuid}@${address}:$xtls?security=xtls&encryption=none&headerType=none&type=tcp&flow=xtls-rprx-direct&sni=$sni#vless_XTLS_$telko_${user}"
+vlesslink2="vless://${uuid}@${address}:$xtls?security=xtls&encryption=none&headerType=none&type=tcp&flow=xtls-rprx-splice&sni=$sni#vless_XTLS_$telko_${user}"
 systemctl restart xray
 clear
 echo -e "━━━━━━━━━━━━━━━━━━"
@@ -1295,6 +1300,7 @@ echo -e "XRay Vless Account Information"
 echo -e "━━━━━━━━━━━━━━━━━━"
 echo -e "Server : ${svname}-XTLS"
 echo -e "Server IP: $MYIP"
+echo -e "Telco : $telko"
 echo -e "Username: ${user}"
 echo -e "Vless ID: ${uuid}"
 echo -e "Active Time: ${masaaktif} days"
@@ -1326,7 +1332,7 @@ read uuid
 echo -e "   Please Choose Telco : "
 echo -e "   1. Digi Pokemon Go"
 echo -e "   2. Umobile"
-echo -e "   3. Maxis : "
+echo -e "   3. MaxisTV : "
 echo -e "   4. Celcom : "
 echo -e "   5. Yes4G : "
 read -p "   Your Choise is : " telco
@@ -1334,34 +1340,33 @@ read -p "   Your Choise is : " telco
 if [[ $telco = "1" ]]; then
 	address="www.pokemon.com.${domain}"
 	sni="www.pokemon.com"
+	telko="DigiGo"
 elif [[ $telco = "2" ]]; then
 	address=$MYIP
 	sni="pay-dcb.u.com.my"
+	telko="Umobile"
 elif [[ $telco = "3" ]]; then
-	address="www.speedtest.net"
+	address="sub.viu.com"
 	sni=$address
+	telko="MaxisTV"
 elif [[ $telco = "4" ]]; then
 	address="onlinepayment.celcom.com.my"
 	sni=$address
+	telko="Celcom"
 elif [[ $telco = "5" ]]; then
 	address="cdn.who.int"
 	sni="who.int"
+	telko="Yes"
 else
 echo -e "   Invalid Choice. no bug added. add manual."
 fi
 
-bug_addr=${address}.
-bug_addr2=$address
-if [[ $address == "" ]]; then
-sts=$bug_addr2
-else
-sts=$bug_addr
-fi
+
 harini=`date -d "0 days" +"%Y-%m-%d"`
 sed -i '/#xray-vless-xtls$/a\#vxtls '"$user $exp $harini $uuid"'\
 },{"id": "'""$uuid""'","flow": "'""xtls-rprx-direct""'","level": '"0"',"email": "'""$user""'"' /usr/local/etc/xray/config.json
-vlesslink1="vless://${uuid}@${address}:$xtls?security=xtls&encryption=none&headerType=none&type=tcp&flow=xtls-rprx-direct&sni=$sni#vless_XTLS_${user}"
-vlesslink2="vless://${uuid}@${address}:$xtls?security=xtls&encryption=none&headerType=none&type=tcp&flow=xtls-rprx-splice&sni=$sni#vless_XTLS_${user}"
+vlesslink1="vless://${uuid}@${address}:$xtls?security=xtls&encryption=none&headerType=none&type=tcp&flow=xtls-rprx-direct&sni=$sni#vless_XTLS_${telko}_${user}"
+vlesslink2="vless://${uuid}@${address}:$xtls?security=xtls&encryption=none&headerType=none&type=tcp&flow=xtls-rprx-splice&sni=$sni#vless_XTLS_${telko}_${user}"
 systemctl restart xray
 clear
 echo -e "━━━━━━━━━━━━━━━━━━"
@@ -1369,6 +1374,7 @@ echo -e "XRay Vless Account Information"
 echo -e "━━━━━━━━━━━━━━━━━━"
 echo -e "Server : ${svname}-XTLS"
 echo -e "Server IP: $MYIP"
+echo -e "Telco : ${telko}"
 echo -e "Username: ${user}"
 echo -e "Vless ID: ${uuid}"
 echo -e "Expiration date: $exp"
