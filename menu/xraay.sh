@@ -862,7 +862,7 @@ systemctl restart xray
 systemctl restart xray@none
 clear
 
-echo -e "━━━━━━━━━━━━━━━━━━"
+echo -e " ━━━━━━━━━━━━━━━━━"
 echo -e "XRay Vless Account Information"
 echo -e "━━━━━━━━━━━━━━━━━━"
 echo -e "Server : ${svname}"
@@ -1072,19 +1072,18 @@ sed -i "s/#vls $user $exp $harini $uuid/#vls $user $exp4 $harini $uuid/g" /usr/l
 service cron restart
 clear
 echo ""
-echo " =========================="
+echo "  ━━━━━━━━━━━━━━━━━"
 echo " XRay Vless Account Information"
-echo " =========================="
+echo "  ━━━━━━━━━━━━━━━━━"
 echo " Server: ${svname}"
 echo " Server IP: $MYIP"
 echo " Username: $user"
 echo " VLess ID: $uuid"
 echo " Active Time: $masaaktif days"
 echo " Expiration Date: $exp4"
-echo " =========================="
+echo "  ━━━━━━━━━━━━━━━━━"
 echo " Anda boleh terus menggunakan config lama."
 echo " Tiada sebarang perubahan config, sekiranya config tidak berjalan atau hilang, sila maklumkan."
-echo ""
 echo " Terima kasih."
 
 }
@@ -1463,19 +1462,18 @@ sed -i "s/#vxtls $user $exp $harini $uuid/#vxtls $user $exp4 $harini $uuid/g" /u
 service cron restart
 clear
 echo ""
-echo " =========================="
+echo "  ━━━━━━━━━━━━━━━━━"
 echo " XRay Vless Account Information"
-echo " =========================="
-echo " Server: ${svname}"
+echo "  ━━━━━━━━━━━━━━━━━"
+echo " Server: ${svname}-XTLS"
 echo " Server IP: $MYIP"
 echo " Username: $user"
 echo " VLess ID: $uuid"
 echo " Active Time: $masaaktif days"
 echo " Expiration Date: $exp4"
-echo " =========================="
+echo "  ━━━━━━━━━━━━━━━━━"
 echo " Anda boleh terus menggunakan config lama."
 echo " Tiada sebarang perubahan config, sekiranya config tidak berjalan atau hilang, sila maklumkan."
-echo ""
 echo " Terima kasih."
 }
 #SHOW VLESS XTLS
