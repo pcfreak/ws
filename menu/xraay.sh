@@ -817,10 +817,6 @@ echo -e "   4. Celcom : "
 echo -e "   5. Yes4G : "
 read -p "   Your Choise is : " telco
 
-
-
-
-
 if [[ $telco = "1" ]]; then
 	telko="Digi"
 	address="162.159.133.61"
@@ -844,11 +840,17 @@ elif [[ $telco = "5" ]]; then
 else
 echo -e "   Invalid Choice. no bug added. add manual."
 fi
-read -p "   Expired (days) : " masaaktif
-patchtls=CF-RAY%3Ahttp%3A//${sni}/xray-vlessws-tls
-patchnontls=/xray-vlessws-none-tls
-patchyes=CF-RAY%3Ahttp%3A//${sni}/xray-vlessws-none-tls
+echo -e "   Pilih expierd date atau validity "
+echo -e "   1. Expierd date "
+echo -e "   2. Validity : "
+read -p "   Your Choise is : " pilihlah
+
+if [[ $pilihlah = "1" ]]; then
+	read -d " Expierd Date : " exp
+else
+read -p "   Validity (days) : " masaaktif
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
+fi
 harini=`date -d "0 days" +"%Y-%m-%d"`
 sed -i '/#xray-vless-tls$/a\#vls '"$user $exp $harini $uuid"'\
 },{"id": "'""$uuid""'","email": "'""$user""'"' /usr/local/etc/xray/config.json
