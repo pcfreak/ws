@@ -846,7 +846,7 @@ echo -e "   2. Validity : "
 read -p "   Your Choise is : " pilihlah
 
 if [[ $pilihlah = "1" ]]; then
-	read -p " Expierd Date : " exp
+	read -p "   Expierd Date : " exp
 else
 read -p "   Validity (days) : " masaaktif
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
