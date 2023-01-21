@@ -856,6 +856,11 @@ sed -i '/#xray-vless-tls$/a\#vls '"$user $exp $harini $uuid"'\
 },{"id": "'""$uuid""'","email": "'""$user""'"' /usr/local/etc/xray/config.json
 sed -i '/#xray-vless-nontls$/a\#vls '"$user $exp $harini $uuid"'\
 },{"id": "'""$uuid""'","email": "'""$user""'"' /usr/local/etc/xray/none.json
+
+patchtls=/xray-vlessws-tls
+patchnontls=/xray-vlessws-none-tls
+patchyes=CF-RAY%3Ahttp%3A//${sni}/xray-vlessws-none-tls
+
 vlesslink1="vless://${uuid}@${address}:$tls?path=$patchtls&security=tls&encryption=none&type=ws&sni=$sni&host=${domain}#vless_${telko}_${user}"
 vlesslink2="vless://${uuid}@${address}:$none?path=$patchnontls&encryption=none&host=$sni&type=ws#vless_${telko}_${user}"
 vlesslinkyes1="vless://${uuid}@${address}:$none?path=$patchyes&security=tls&encryption=none&type=ws&host=${domain}#vless_${telko}_${user}"
@@ -874,14 +879,13 @@ echo -e "Telco: ${telko}"
 echo -e "Vless ID: ${uuid}"
 echo -e "Active Time: ${masaaktif} days"
 echo -e "Expiration date: $exp"
-echo ""
 echo -e "━━━━━━━━━━━━━━━━━━"
 echo -e "CLICK TO COPY"
 echo -e "━━━━━━━━━━━━━━━━━━"
 if [[ $telco = "1" ]]; then
-	echo -e "${vlesslink2}"
-	echo -e "${━━━━━━━━━━━━━━━━━━}"
 	echo -e "${vlesslink1}"
+	echo -e "${━━━━━━━━━━━━━━━━━━}"
+	echo -e "${vlesslink2}"
 elif [[ $telco = "2" ]]; then
 	echo -e "${vlesslink2}"
 elif [[ $telco = "3" ]]; then
@@ -915,7 +919,7 @@ exp=$(date -d "$masaaktif days" +"%Y-%m-%d")
 # Make Random Username
 user=Trial`</dev/urandom tr -dc X-Z0-9 | head -c4`
 
-patchtls=CF-RAY%3Ahttp%3A//${sni}/xray-vlessws-tls
+patchtls=/xray-vlessws-tls
 patchnontls=/xray-vlessws-none-tls
 patchyes=CF-RAY%3Ahttp%3A//${sni}/xray-vlessws-none-tls
 echo -ne "   Custom UUID [press enter for random] : "
@@ -1149,7 +1153,7 @@ elif [[ $telco = "5" ]]; then
 else
 echo -e "   Invalid Choice. no bug added. add manual."
 fi
-patchtls=CF-RAY%3Ahttp%3A//${sni}/xray-vlessws-tls
+patchtls=/xray-vlessws-tls
 patchnontls=/xray-vlessws-none-tls
 patchyes=CF-RAY%3Ahttp%3A//${sni}/xray-vlessws-none-tls
 
@@ -1177,9 +1181,9 @@ echo -e "━━━━━━━━━━━━━━━━━━"
 echo -e "CLICK TO COPY"
 echo -e "━━━━━━━━━━━━━━━━━━"
 if [[ $telco = "1" ]]; then
-	echo -e "${vlesslink2}"
-	echo -e "============="
 	echo -e "${vlesslink1}"
+	echo -e "${━━━━━━━━━━━━━━━━━━}"
+	echo -e "${vlesslink2}"
 elif [[ $telco = "2" ]]; then
 	echo -e "${vlesslink2}"
 elif [[ $telco = "3" ]]; then
