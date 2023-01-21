@@ -880,6 +880,8 @@ echo -e "CLICK TO COPY"
 echo -e "━━━━━━━━━━━━━━━━━━"
 if [[ $telco = "1" ]]; then
 	echo -e "${vlesslink2}"
+	echo -e "${━━━━━━━━━━━━━━━━━━}"
+	echo -e "${vlesslink1}"
 elif [[ $telco = "2" ]]; then
 	echo -e "${vlesslink2}"
 elif [[ $telco = "3" ]]; then
