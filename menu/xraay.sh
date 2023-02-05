@@ -840,17 +840,10 @@ elif [[ $telco = "5" ]]; then
 else
 echo -e "   Invalid Choice. no bug added. add manual."
 fi
-echo -e "   Pilih expierd date atau validity "
-echo -e "   1. Expierd date "
-echo -e "   2. Validity : "
-read -p "   Your Choise is : " pilihlah
 
-if [[ $pilihlah = "1" ]]; then
-	read -p "   Expierd Date : " exp
-else
 read -p "   Validity (days) : " masaaktif
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
-fi
+
 harini=`date -d "0 days" +"%Y-%m-%d"`
 sed -i '/#xray-vless-tls$/a\#vls '"$user $exp $harini $uuid"'\
 },{"id": "'""$uuid""'","email": "'""$user""'"' /usr/local/etc/xray/config.json
@@ -1292,17 +1285,8 @@ else
 echo -e "   Invalid Choice. no bug added. add manual."
 fi
 
-echo -e "   Pilih expierd date atau validity "
-echo -e "   1. Expierd date "
-echo -e "   2. Validity : "
-read -p "   Your Choise is : " pilihlah
-
-if [[ $pilihlah = "1" ]]; then
-	read -p "   Expierd Date : " exp
-else
-read -p "   Validity (days) : " masaaktif
+-p "   Validity (days) : " masaaktif
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
-fi
 
 sts=$bug_addr2
 
