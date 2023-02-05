@@ -841,7 +841,7 @@ else
 echo -e "   Invalid Choice. no bug added. add manual."
 fi
 
-read -p "   Validity (days) : " masaaktif
+read -p "Expired (days): " masaaktif
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 
 harini=`date -d "0 days" +"%Y-%m-%d"`
@@ -1285,7 +1285,7 @@ else
 echo -e "   Invalid Choice. no bug added. add manual."
 fi
 
--p "   Validity (days) : " masaaktif
+read -p "Expired (days): " masaaktif
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 
 sts=$bug_addr2
