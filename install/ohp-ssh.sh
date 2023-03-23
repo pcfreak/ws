@@ -1,6 +1,6 @@
 #!/bin/bash
 #wget https://github.com/${GitUser}/
-GitUser="rasta-team"
+GitUser="akuhaa021"
 #Open HTTP Puncher By V-Code
 #Direct Proxy Squid For OpenVPN TCP
 RED='\e[1;31m'

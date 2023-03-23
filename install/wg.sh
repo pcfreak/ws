@@ -24,7 +24,7 @@ echo -e "${Info} Wireguard VPS AutoScript by DIYVPN"
 # Detect public IPv4 address and pre-fill for the user
 
 #wget https://github.com/${GitUser}/
-GitUser="rasta-team"
+GitUser="akuhaa021"
 # Detect public interface and pre-fill for the user
 SERVER_PUB_NIC=$(ip -o $ANU -4 route show to default | awk '{print $5}');
 

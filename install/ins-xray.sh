@@ -1,6 +1,6 @@
 #!/bin/bash
 #wget https://github.com/${GitUser}/
-GitUser="rasta-team"
+GitUser="akuhaa021"
 #IZIN SCRIPT
 MYIP=$(curl -sS ipv4.icanhazip.com)
 # Valid Script
@@ -33,7 +33,7 @@ domain=$(cat /root/domain)
 # ACME DOMAIN
 echo ""
 echo -e "   .-----------------------------------."
-echo -e "   |   \e[1;32mPlease select acme for domain\e[0m   |"
+echo -e "   |   \e[1;32mPlease select acme fo rdomain\e[0m   |"
 echo -e "   '-----------------------------------'"
 echo -e "     \e[1;32m1)\e[0m ZeroSSL.com"
 echo -e "     \e[1;32m2)\e[0m BuyPass.com"

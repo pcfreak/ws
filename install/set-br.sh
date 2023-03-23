@@ -1,6 +1,6 @@
 #!/bin/bash
 #wget https://github.com/${GitUser}/
-GitUser="rasta-team"
+GitUser="akuhaa021"
 curl https://rclone.org/install.sh | bash
 printf "q\n" | rclone config
 wget -O /root/.config/rclone/rclone.conf "https://raw.githubusercontent.com/${GitUser}/ws/main/rclone.conf"
