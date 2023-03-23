@@ -1,7 +1,8 @@
-# Script DONVPN (V1-Websocket)
+# Script DIYVPN (V1-Websocket)
  Welcome Dear😊
 
- <h2 align="center">AutoScript VPN By DON VPN <img src="https://img.shields.io/badge/Version-1.0-blue.svg"></h2>
+ <h2 align="center">AutoScript VPN By DIYVPN <img src="https://img.shields.io/badge/Version-1.0-blue.svg"></h2>
+
 
 <h2 align="center"> Supported Linux Distribution</h2>
 <p align="center"><img src="https://d33wubrfki0l68.cloudfront.net/5911c43be3b1da526ed609e9c55783d9d0f6b066/9858b/assets/img/debian-ubuntu-hover.png"></p>
@@ -29,7 +30,7 @@ src="https://img.shields.io/badge/Service-Xray-success.svg">  <img src= "https:/
 ## INSTALLATION SCRIPT
 
   ```html
-  sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ipv6.conf.default.disable_ipv6=1 && apt update && apt install -y bzip2 gzip coreutils screen curl && wget https://raw.githubusercontent.com/akuhaa021/ws/main/setup.sh && chmod +x setup.sh && sed -i -e 's/\r$//' setup.sh && screen -S setup ./setup.sh
+  sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ipv6.conf.default.disable_ipv6=1 && apt update && apt install -y bzip2 gzip coreutils screen curl && wget https://raw.githubusercontent.com/rasta-team/ws/main/setup.sh && chmod +x setup.sh && sed -i -e 's/\r$//' setup.sh && screen -S setup ./setup.sh
 
   ```
  
@@ -52,9 +53,14 @@ systemctl restart wg-quick@wg0
 
 ## Info :
 
- ## Script for Sell Only. Contact owner on Telegram @donboyage <a href="https://t.me/donboyage" target=”_blank”><img src="https://img.shields.io/static/v1?style=for-the-badge&logo=Telegram&label=Telegram&message=Click%20Here&color=blue"></a>
+ ## Script for Sell Only. Contact owner on Telegram @NORULEZZx <a href="https://t.me/NORULEZZx" target=”_blank”><img src="https://img.shields.io/static/v1?style=for-the-badge&logo=Telegram&label=Telegram&message=Click%20Here&color=blue"></a>
 
- ## For Buy Script : Contact Telegram @donboyage <a href="https://t.me/donboyage" target=”_blank”><img src="https://img.shields.io/static/v1?style=for-the-badge&logo=Telegram&label=Telegram&message=Click%20Here&color=blue"></a>
+ ## For Buy Script : Contact Telegram @NORULEZZx <a href="https://t.me/Virtual_NW" target=”_blank”><img src="https://img.shields.io/static/v1?style=for-the-badge&logo=Telegram&label=Telegram&message=Click%20Here&color=blue"></a>
+
+ ## Main Menu
+
+![IMG_20220627_092250_806](https://user-images.githubusercontent.com/108207883/175843517-06b4cea2-8e63-4c28-b325-c6b8e2588425.jpg)
+
 
 
   ## Status Running
@@ -113,8 +119,21 @@ systemctl restart wg-quick@wg0
 
 ## Telegram
 
-[DON_VPN](https://t.me/donboyage)
+[DIY_VPN](https://t.me/NORULEZZx)
 
+[Group DIY-VPN](https://t.me/DIYNETWORKK)
 
+[Channel DIY-VPN](https://t.me/DIYVPNCHANNEL)
 
+## Credit :
 
+*   DIYVPN
+
+*   Project D
+
+*   V2ray
+
+<p align="center">
+  <a><img src="https://img.shields.io/badge/Copyright%20©-Diyvpn%20AutoScriptVPN%202022.%20All%20rights%20reserved...-blueviolet.svg" style="max-width:200%;">
+    </p>
+   </p>
