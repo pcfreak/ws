@@ -1,6 +1,6 @@
 #!/bin/bash
 #wget https://github.com/${GitUser}/
-GitUser="rasta-team"
+GitUser="akuhaa021"
 if [ "${EUID}" -ne 0 ]; then
 		echo "You need to run this script as root"
 		exit 1
@@ -19,7 +19,7 @@ clear
 # Version sc
 VERSIONSC () {
     VCODE=V1
-    IZINVERSION=$(curl https://raw.githubusercontent.com/${GitUser}/allow/main/ipvps.conf | grep $MYIP | awk '{print $6}')
+    IZINVERSION=V1
     if [ $VCODE = $IZINVERSION ]; then
     echo -e "\e[32mReady for script installation version 1 (websocket)..\e[0m"
     else
