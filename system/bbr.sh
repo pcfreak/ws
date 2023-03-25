@@ -1,7 +1,7 @@
 #!/bin/bash
 #Optimasi Speed By Virtual
 #wget https://github.com/${GitUser}/
-GitUser="akuhaa021"
+GitUser="pcfreak"
 #IZIN SCRIPT
 MYIP=$(curl -sS ipv4.icanhazip.com)
 echo -e "\e[32mloading...\e[0m"
