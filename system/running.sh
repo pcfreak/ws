@@ -3,7 +3,7 @@ red="\e[1;31m"
 green="\e[0;32m"
 NC="\e[0m"
 clear
-GitUser="akuhaa021"
+GitUser="pcfreak"
 # VPS Information
 Checkstart1=$(ip route | grep default | cut -d ' ' -f 3 | head -n 1);
 if [[ $Checkstart1 == "venet0" ]]; then 
